@@ -1,0 +1,28 @@
+{
+    "sources": [
+        {
+            "id": 1,
+            "region": "Jilin",
+            "date_submitted": "2026-09-26",
+            "date_made": "2026-09-25",
+            "type_of_source": "Research",
+            "score": 59
+        },
+        {
+            "id": 2,
+            "region": "Tibet",
+            "date_submitted": "2026-09-27",
+            "date_made": "2026-06-25",
+            "type_of_source": "News papper",
+            "score": 65
+        },
+        {
+            "id": 3,
+            "region": "Jilin",
+            "date_submitted": "2026-09-27",
+            "date_made": "2026-09-25",
+            "type_of_source": "Goverment",
+            "score": 78
+        }
+    ]
+}
