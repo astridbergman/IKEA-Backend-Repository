@@ -6,7 +6,8 @@
             "date_submitted": "2026-09-26",
             "date_made": "2026-09-25",
             "type_of_source": "Research",
-            "score": 59
+            "score": 59,
+            "summary": "This is the information about the working conditions..."
         },
         {
             "id": 2,
@@ -14,7 +15,8 @@
             "date_submitted": "2026-09-27",
             "date_made": "2026-06-25",
             "type_of_source": "News papper",
-            "score": 65
+            "score": 65,
+            "summary": "The videos are fraiting and people are wondering what is happening..."
         },
         {
             "id": 3,
@@ -22,7 +24,8 @@
             "date_submitted": "2026-09-27",
             "date_made": "2026-09-25",
             "type_of_source": "Goverment",
-            "score": 78
+            "score": 78,
+            "summary": "According to artical 3.5 of the ..."
         }
     ]
 }

@@ -19,6 +19,23 @@ def get_baseInfo():
          regions[region].append(score)
     return calculate_region_scores(regions)
 
+#----At the moment thinks the frontend handles the region name and score
+def get_regionInfo(chosenRegion):
+     sources = load_sources()
+     region_sources = []
+
+     for source in sources["sources"]:
+          if source["region"] == chosenRegion:
+               region_sources.append({
+                    "type of source": source["type_of_source"],
+                    "score": source["score"],
+                    "summary": source["summary"]
+               }
+               )
+     return region_sources
+          
+
+
 ###-----Region score is currently calcutaled as the avergare of all scores for the region.---------------
 def calculate_region_scores(regions):
      return [
