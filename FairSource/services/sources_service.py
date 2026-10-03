@@ -1,4 +1,5 @@
 import json
+from FairSource.services.score_service import calculate_region_scores
 
 def load_sources():
     with open("FairSource/data/database.json", "r", encoding="utf-8") as file:
@@ -9,14 +10,14 @@ def get_baseInfo():
     sources = load_sources()
     regions = {}
 
+     #This what ever will be sent to score_service
     for source in sources["sources"]:
          region = source["region"]
-         score = source["score"]
 
          if region not in regions:
               regions[region] = []
         
-         regions[region].append(score)
+         regions[region].append(source)
     return calculate_region_scores(regions)
 
 #----At the moment thinks the frontend handles the region name and score
@@ -36,13 +37,5 @@ def get_regionInfo(chosenRegion):
           
 
 
-###-----Region score is currently calcutaled as the avergare of all scores for the region.---------------
-def calculate_region_scores(regions):
-     return [
-          {
-               "region": region,
-               "score": sum(scores) / len(scores)
-          }
-          for region, scores in regions.items()
-     ]
+
            
