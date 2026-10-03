@@ -1,0 +1,26 @@
+{
+    "constraints": {
+        "source_types": {
+            "Research": {
+                "weight": 1.0,
+                "half_life_days": 3650
+            },
+            "Government": {
+                "weight": 1.0,
+                "half_life_days": 1825
+            },
+            "News paper": {
+                "weight": 0.7,
+                "half_life_days": 30
+            },
+            "Social media": {
+                "weight": 0.3,
+                "half_life_days": 3
+            }
+        },
+        "region_score": {
+            "min": 0,
+            "max": 100
+        }
+    }
+}
