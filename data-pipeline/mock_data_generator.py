@@ -62,7 +62,7 @@ if __name__ == "__main__":
         "count",
         nargs="?",
         type=int,
-        default=10,
+        default=150,
         help="number of records to create (default: 10)",
     )
     parser.add_argument(
@@ -79,7 +79,7 @@ if __name__ == "__main__":
     records = mockConnector(args.count, random.Random(args.seed))
     output_path = Path(__file__).with_name("mock_data.json")
     output_path.write_text(
-        json.dumps(records, default=lambda value: value.isoformat(), indent=2),
+        json.dumps(records, default=lambda value: value.date().isoformat(), indent=2),
         encoding="utf-8",
     )
     print(f"Wrote {len(records)} records to {output_path}")
