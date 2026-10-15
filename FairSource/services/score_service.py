@@ -27,26 +27,18 @@ def calculate_region_scores(regions):
 
 def extract_source_data(source):
     return {
-        "score": source["score"],
-        "source_type": source["type_of_source"],
-        "date_made": source["date_made"],
+        "score": source["severity"],
+        "source_type": source["source_id"],
+        "date_made": source["published_at"],
     }
 
 
 #should return a score for a source after its type of source and date made is taken into consideration
 def count_factored_score(factors, constraints):
-    source_score = factors["score"]
-
-    date_score = date_factor(factors["date_made"], constraints["half_life_days"])
-
-    # Adjusted source score
-    adjusted_score = source_score * date_score
-
-    # Weighted source score
-    weighted_score = adjusted_score * constraints["weight"]
+    decay = date_factor(factors["date_made"], constraints["half_life_days"])
 
     return {
-        "score": weighted_score,
+        "score": factors["score"] * decay,
         "weight": constraints["weight"]
     }
 

@@ -2,7 +2,7 @@ import json
 from FairSource.services.score_service import calculate_region_scores
 
 def load_sources():
-    with open("FairSource/data/database.json", "r", encoding="utf-8") as file:
+    with open("data-pipeline/mock_data.json", "r", encoding="utf-8") as file:
             data = json.load(file)
     return data
 
@@ -11,7 +11,7 @@ def get_baseInfo():
     regions = {}
 
      #This what ever will be sent to score_service
-    for source in sources["sources"]:
+    for source in sources:
          region = source["region"]
 
          if region not in regions:
@@ -25,12 +25,12 @@ def get_regionInfo(chosenRegion):
      sources = load_sources()
      region_sources = []
 
-     for source in sources["sources"]:
+     for source in sources:
           if source["region"] == chosenRegion:
                region_sources.append({
-                    "type of source": source["type_of_source"],
-                    "score": source["score"],
-                    "summary": source["summary"]
+                    "type of source": source["source_id"],
+                    "score": source["severity"],
+                    "summary": source["risk_category"]
                }
                )
      return region_sources

@@ -1,21 +1,29 @@
 {
     "constraints": {
         "source_types": {
-            "Research": {
-                "weight": 1.0,
+            "research": {
+                "weight": 0.9,
                 "half_life_days": 3650
             },
-            "Government": {
+            "government": {
+                "weight": 0.9,
+                "half_life_days": 2555
+            },
+            "un": {
                 "weight": 1.0,
+                "half_life_days": 3825
+            },
+            "audit": {
+                "weight": 0.85,
                 "half_life_days": 1825
             },
-            "News paper": {
-                "weight": 0.7,
-                "half_life_days": 30
+            "news": {
+                "weight": 0.6,
+                "half_life_days": 180
             },
-            "Social media": {
+            "social media": {
                 "weight": 0.3,
-                "half_life_days": 3
+                "half_life_days": 30
             }
         },
         "region_score": {
